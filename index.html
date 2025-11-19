@@ -22,6 +22,12 @@
   <meta name="twitter:description" content="Explore my portfolio and projects in the React ecosystem.">
   <meta name="twitter:image" content="https://yourdomain.com/og-image.png">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/sajid_hasan.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/sajid_hasan.jpg">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   
@@ -29,12 +35,107 @@
   <style>
     body { font-family: 'Inter', sans-serif; margin:0; padding:0; line-height:1.6; color:#111; background:#f9f9f9; }
     a { text-decoration:none; }
-    header, section, footer { padding: 60px 20px; max-width: 1200px; margin:auto; }
+    section, footer { padding: 60px 20px; max-width: 1200px; margin:auto; }
     h1,h2,h3 { margin-bottom: 16px; }
-    .hero { text-align:center; padding-top:100px; }
-    .hero h1 { font-size:3rem; }
-    .hero p { font-size:1.2rem; color:#555; margin-bottom:30px; }
-    .btn { padding:12px 24px; border-radius:6px; font-weight:600; margin:0 8px; display:inline-block; transition:0.3s; }
+    
+    /* Hero Section Responsive Styles */
+    .hero { 
+      padding: 80px 20px; 
+      max-width: 1200px; 
+      margin: auto;
+    }
+    .hero-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      min-height: 500px;
+    }
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 1;
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      order: 2;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+    .hero h1 { 
+      font-size: 3.5rem; 
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      color: #555; 
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+      .hero-container {
+        flex-direction: column;
+        gap: 30px;
+        min-height: auto;
+      }
+      .hero-content {
+        order: 2;
+        text-align: center;
+      }
+      .hero-image {
+        order: 1;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-image img {
+        max-width: 300px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+      .hero-image img {
+        max-width: 250px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+    
+    .btn { padding:12px 24px; border-radius:6px; font-weight:600; display:inline-block; transition:0.3s; }
     .btn-primary { background:#0070f3; color:#fff; }
     .btn-primary:hover { background:#005bb5; }
     .btn-secondary { border:2px solid #0070f3; color:#0070f3; }
@@ -55,10 +156,19 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <h1>Md Sajid Hasan</h1>
-    <p>Software Engineer & Web Developer specializing in the React ecosystem</p>
-    <a href="#projects" class="btn btn-primary">View My Projects</a>
-    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Md Sajid Hasan</h1>
+        <p>Software Engineer & Web Developer specializing in the React ecosystem. Building scalable and modern web applications with cutting-edge technologies.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/sajid_hasan.jpg" alt="Md Sajid Hasan Profile Picture">
+      </div>
+    </div>
   </header>
 
   <!-- About Section -->
